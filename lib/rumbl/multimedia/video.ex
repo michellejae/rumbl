@@ -19,5 +19,6 @@ defmodule Rumbl.Multimedia.Video do
     #below shoujld be description but too lazy
     |> cast(attrs, [:url, :title, :desscription, :category_id]) #which fields from user-input may be allowed in
     |> validate_required([:url, :title, :desscription]) # validation of fields that MUST be present
+    |> assoc_constraint(:category)
   end
 end
